@@ -1,0 +1,64 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+
+@theme inline {
+  --color-background: var(--fundo);
+  --color-foreground: var(--fundo-secundário);
+  --font-sans: var(--font-custom-sans);
+  --font-mono: var(--font-custom-mono);
+  --color-border: var(--contraste);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-accent: var(--contraste);
+  --color-accent-foreground: var(--fundo-secundário);
+  --color-primary: var(--fundo);
+  --color-primary-foreground: var(--fundo-secundário);
+  --color-secondary: var(--contraste);
+  --color-secondary-foreground: var(--fundo);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+body {
+  background: var(--fundo);
+  color: var(--fundo-secundário);
+}
+
+:root {
+  --radius: 0.625rem;
+  --fundo: oklch(1 0 0);
+  --fundo-secundário: oklch(0.129 0.042 264.695);
+  --contraste: oklch(0.208 0.042 265.755);
+  --primary: oklch(0.208 0.042 265.755);
+  --primary-foreground: oklch(0.984 0.003 247.858);
+  --secondary: oklch(0.968 0.007 247.896);
+  --secondary-foreground: oklch(0.208 0.042 265.755);
+  --border: oklch(0.929 0.013 255.508);
+  --input: oklch(0.929 0.013 255.508);
+  --ring: oklch(0.704 0.04 256.788);
+}
+
+.pattern {
+  --fundo: oklch(0.129 0.042 264.695);
+  --fundo-secundário: oklch(0.984 0.003 247.858);
+  --contraste: oklch(0.929 0.013 255.508);
+  --primary: oklch(0.279 0.041 260.031);
+  --primary-foreground: oklch(0.984 0.003 247.858);
+  --secondary: oklch(0.279 0.041 260.031);
+  --secondary-foreground: oklch(0.984 0.003 247.858);
+  --border: oklch(1 0 0 / 10%);
+  --input: oklch(1 0 0 / 15%);
+  --ring: oklch(0.551 0.027 264.364);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-fundo text-fundo-secundário;
+  }
+}
