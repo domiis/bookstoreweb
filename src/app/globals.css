@@ -1,32 +1,7 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
-
-@theme inline {
-  --color-background: var(--fundo);
-  --color-foreground: var(--fundo-secundário);
-  --font-sans: var(--font-custom-sans);
-  --font-mono: var(--font-custom-mono);
-  --color-border: var(--contraste);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-accent: var(--contraste);
-  --color-accent-foreground: var(--fundo-secundário);
-  --color-primary: var(--fundo);
-  --color-primary-foreground: var(--fundo-secundário);
-  --color-secondary: var(--contraste);
-  --color-secondary-foreground: var(--fundo);
-  --radius-sm: calc(var(--radius) - 4px);
-  --radius-md: calc(var(--radius) - 2px);
-  --radius-lg: var(--radius);
-  --radius-xl: calc(var(--radius) + 4px);
-}
-
-body {
-  background: var(--fundo);
-  color: var(--fundo-secundário);
-}
-
+/* Definindo variáveis globais no :root */
 :root {
   --radius: 0.625rem;
   --fundo: oklch(1 0 0);
@@ -41,6 +16,16 @@ body {
   --ring: oklch(0.704 0.04 256.788);
 }
 
+/* Estilo global do body */
+body {
+  background: var(--fundo);
+  color: var(--fundo-secundário);
+  border: 1px solid var(--border); /* Definindo borda com variáveis */
+  outline: 2px solid var(--ring); /* Definindo outline com variáveis */
+  border-radius: var(--radius); /* Usando variável para border-radius */
+}
+
+/* Estilos para o padrão 'pattern' */
 .pattern {
   --fundo: oklch(0.129 0.042 264.695);
   --fundo-secundário: oklch(0.984 0.003 247.858);
@@ -54,11 +39,14 @@ body {
   --ring: oklch(0.551 0.027 264.364);
 }
 
+/* Usando classes do Tailwind diretamente */
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    border: 1px solid var(--border); /* Definindo borda com variável */
+    outline: 2px solid var(--ring); /* Definindo outline com variável */
   }
   body {
-    @apply bg-fundo text-fundo-secundário;
+    background: var(--fundo);
+    color: var(--fundo-secundário);
   }
 }

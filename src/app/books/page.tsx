@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { FaSearch, FaHome, FaBook, FaCog, FaBookmark, FaUserCircle, FaBell, FaArrowLeft, FaArrowRight } from "react-icons";
+import { FaSearch, FaHome, FaBook, FaCog, FaBookmark, FaUserCircle, FaBell, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
 export default function BooksPage() {
   return (
